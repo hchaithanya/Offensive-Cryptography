@@ -1,0 +1,16 @@
+Give As > 256+ 8 is when it starts to overflow
+
+STEP 1:THen using that put it in gdb. THen you find the adress where the 'A's is getting filled ( it is in put function where it puts the A).
+Now assume that it is the return adres for your payload. And place it in pay load.
+
+STEP2: Find the length of shellcode so that you can calculatae the padding length.
+		If length of shellcode is odd, add a nop at the end. 
+STEP3: Now run the test.txt in gdb and give x/100xg addr. This addr is the addr of a's beginning.
+STEP4:  Now to get it running, give the correct addr
+
+
+
+readelf -h ./binary.out
+b *entrypoint 
+not b * 
+x/11i entrypoint_addr
