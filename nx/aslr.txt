@@ -1,0 +1,8 @@
+Working of ASLR 
+
+1. Find the got entry
+2. Find the offset
+3. From that find the system address
+4. Write an nx- gadget sequencing for the program given
+5. Once you have found the system address by that "sub command" insert the nx code and then add the plt entry at the end. 
+6. Recheck to see if you have a pointer to rdi
